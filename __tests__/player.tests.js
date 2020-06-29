@@ -46,7 +46,7 @@ describe('Player', ()=> {
     player.getFreeStuff();
     jest.advanceTimersByTime(10001);
     expect(player.fame).toBeLessThan(40);
-    expect(player.money).toBeMoreThan(200);
+    expect(player.money).toBeGreaterThan(200);
   });
 
 

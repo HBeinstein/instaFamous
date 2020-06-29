@@ -31,4 +31,12 @@ export class Player {
     this.fame+= Math.floor(Math.random() * (5)) + 1;
   }
 
+  getFreeStuff() {
+    this.fame-= Math.floor(Math.random() * (5)) + 1;
+    this.money+= Math.floor(Math.random() * (4 - 2 + 1)) + 2;
+  }
 }
+
+  // function getRndInteger(min, max) {
+  //   return Math.floor(Math.random() * (max - min + 1) ) + min;
+  // }
