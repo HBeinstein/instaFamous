@@ -21,7 +21,7 @@ export class Player {
 
   fameAttrition() {
     setInterval(() => {
-      this.fame-= this.fameAttritionVal;
+      this.decreaseFame(this.fameAttritionVal);
     }, 10000)
   }
 
@@ -31,6 +31,13 @@ export class Player {
     if (this.money <= 0) {
       this.hasLost = true;
     }
+  }
+
+  decreaseFame(num) {
+    this.fame -= num;
+
+    if (this.fame < 0)
+      this.fame = 0;
   }
 
   work() {
@@ -52,7 +59,7 @@ export class Player {
   getFreeStuff() {
     this.isBusy = true;
     setTimeout(()=> {
-      this.fame-= this.randomInterger(1, 5);
+      this.decreaseFame(this.randomInterger(1, 5));
       this.money+= this.randomInterger(1, 5);
       this.isBusy = false;
     }, 5000)
@@ -76,7 +83,7 @@ export class Player {
       this.isBusy = true;
       setTimeout(()=> {
         this.money += 10;
-        this.fame -= 5;
+        this.decreaseFame(5);
         this.isBusy = false;
       }, 10000)
     }
