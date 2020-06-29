@@ -30,17 +30,25 @@ describe('Player', ()=> {
     expect(player.fame).toEqual(50 - player.fameAttrition);
   });
 
-  test('should increase money after 10 seconds by the Job pay rate after 10 seconds', ()=> {
+  test('should increase money after 10 seconds by the Job pay rate after 10 seconds when working', ()=> {
     player.work();
     jest.advanceTimersByTime(10001);
     expect(player.money).toEqual(200 + player.jobPayRate);
   });
 
-  test('should randomly increase fame value after 5 seconds', ()=> {
+  test('should randomly increase fame value after 5 seconds when taking selfies', ()=> {
     player.takeSelfies();
     jest.advanceTimersByTime(10001);
     expect(player.fame).toBeGreaterThan(40);
   });
+
+  test('should randomly decrease fame and randomly increase money after 5 seconds when asking for free stuff', ()=> {
+    player.getFreeStuff();
+    jest.advanceTimersByTime(10001);
+    expect(player.fame).toBeLessThan(40);
+    expect(player.money).toBeMoreThan(200);
+  });
+
 
 
 });
