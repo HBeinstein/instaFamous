@@ -28,15 +28,15 @@ export class Player {
   }
 
   takeSelfies() {
-    this.fame+= Math.floor(Math.random() * (5)) + 1;
+    this.fame+= this.randomInterger(1, 5);
   }
 
   getFreeStuff() {
-    this.fame-= Math.floor(Math.random() * (5)) + 1;
-    this.money+= Math.floor(Math.random() * (4 - 2 + 1)) + 2;
+    this.fame-= this.randomInterger(1, 5);
+    this.money+= this.randomInterger(1, 5);
+  }
+
+  randomInterger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
   }
 }
-
-  // function getRndInteger(min, max) {
-  //   return Math.floor(Math.random() * (max - min + 1) ) + min;
-  // }

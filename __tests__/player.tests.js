@@ -49,6 +49,13 @@ describe('Player', ()=> {
     expect(player.money).toBeGreaterThan(200);
   });
 
+  test('should greatly increase fame, but greatly loose money by "Living Lavishly" after 8 seconds', ()=> {
+    player.liveLavishly();
+    jest.advanceTimersByTime(8000);
+    expect(player.fame).toEqual(65);
+    expect(player.money).toEqual(150);
+  })
+
 
 
 });
