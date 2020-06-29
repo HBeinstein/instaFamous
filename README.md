@@ -37,6 +37,9 @@ Open by downloading:
 |9.| Player can maintain their "Insta Image" to lessen fame attrition and increase money attrition after 15 seconds | maintain Insta image button is clicked | FameAttrition: 10, MoneyAttrition: 15 | _False_|
 |10.| Player is prevented from selecting multiple buttons | multiple buttons are selected | alert("Only one action at a time!")| _False_|
 
+Add spec for winning/loosing
+Add spec for preventing fame to go below "0"
+
 
 ## Known Bugs
 
