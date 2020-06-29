@@ -39,7 +39,7 @@ describe('Player', ()=> {
   test('should randomly increase fame value after 5 seconds', ()=> {
     player.takeSelfies();
     jest.advanceTimersByTime(10001);
-    expect(player.fame).toBeGreaterThan(50);
+    expect(player.fame).toBeGreaterThan(40);
   });
 
 

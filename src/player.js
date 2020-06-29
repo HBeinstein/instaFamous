@@ -27,4 +27,8 @@ export class Player {
     },10000)
   }
 
+  takeSelfies() {
+    this.fame+= Math.floor(Math.random() * (5)) + 1;
+  }
+
 }
