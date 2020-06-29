@@ -38,7 +38,7 @@ describe('Player', ()=> {
 
   test('should randomly increase fame value after 5 seconds when taking selfies', ()=> {
     player.takeSelfies();
-    jest.advanceTimersByTime(10001);
+    jest.advanceTimersByTime(5001);
     expect(player.fame).toBeGreaterThan(40);
   });
 
@@ -73,12 +73,42 @@ describe('Player', ()=> {
 
   test('should lessen fame attrition and increase money attrition for 30 seconds', ()=> {
     player.instaImage();
-    expect(player.moneyAttrition).toEqual(5);
-    expect(player.fameAttrition).toEqual(30);
+    expect(player.moneyAttrition).toEqual(30);
+    expect(player.fameAttrition).toEqual(5);
 
     jest.advanceTimersByTime(30001);
-    expect(player.moneyAttrition).toEqual(10);
-    expect(money.fameAttrition).toEqual(20);
+    expect(player.moneyAttrition).toEqual(20);
+    expect(player.fameAttrition).toEqual(10);
+  });
+
+  test('should not engage multiple user activities simultaneously', () => {
+    expect(player.isBusy).toBeFalsy();
+
+    player.work();
+    player.takeSelfies();
+    expect(player.isBusy).toBeTruthy();
+    
+    jest.advanceTimersByTime(10001);
+    
+    expect(player.isBusy).toBeFalsy();
+    expect(player.money).toEqual(200 + player.jobPayRate);
+    expect(player.fame).not.toEqual(40);
+  });
+
+  test('should cause player to loose if money is reduced below 0', () => {
+    player.money = 10;
+    this.hasLost = false;
+
+    jest.advanceTimersByTime(10001);
+
+    expect(player.money).toEqual(-10);
+    expect(player.hasLost).toBe(true);
+  });
+
+  test('should never allow fame to drop below 0', ()=> {
+    player.fame = 0;
+    jest.advanceTimersByTime(10001);
+    expect(player.fame).toEqual(0);
   });
 });
 

@@ -34,8 +34,10 @@ Open by downloading:
 |6.| Player can ask for free stuff and randomly increase/decrease fame after 5 seconds | ask for free stuff button is clicked | Fame: 30 | _True_|
 |7.| Player can "live lavishly" and decrease money but increase fame after 8 seconds | live lavishly button is clicked | Money: 10, Fame: 30 | _True_|
 |8.| Player can advertise products to increase money after they reach spec. level of fame but decrease fame slightly after 10 seconds | advertise products button is clicked | Money: 50, Fame: 30 | _True_|
-|9.| Player can maintain their "Insta Image" to lessen fame attrition and increase money attrition after 15 seconds | maintain Insta image button is clicked | FameAttrition: 10, MoneyAttrition: 15 | _False_|
-|10.| Player is prevented from selecting multiple buttons | multiple buttons are selected | alert("Only one action at a time!")| _False_|
+|9.| Player can maintain their "Insta Image" to lessen fame attrition and increase money attrition after 15 seconds | maintain Insta image button is clicked | FameAttrition: 10, MoneyAttrition: 15 | _True_|
+|10.| Player is prevented from selecting multiple buttons | multiple buttons are selected | alert("Only one action at a time!")| _True_|
+|11.| Player looses if money is reduced to or below 0 | Money =< 0 | hasLost = true | _False_|
+|12.| Fame can not decrease below 0 | Fame: 5, reduced by 10 | Fame: 0 | _False_ |
 
 Add spec for winning/loosing
 Add spec for preventing fame to go below "0"
