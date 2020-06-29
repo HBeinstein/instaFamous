@@ -22,6 +22,22 @@ Open by downloading:
 1. Clone the project from its GitHub repository.
 2. Open in your code editor of choice or drag index.html file into your browser or double click to view site.
 
+## Specifications
+
+| |Behavior| Input| Output| isComplete|
+|---|----|----|----|----|
+|1.| Program instantiates new player upon start with a "Fame" and "Money" stat | start button is clicked | Fame: 0, Money: 400 | _False_|
+|2.| Money will decrease every 15 seconds | Money: 50 | Money: 30 |  _False_|
+|3.| Fame will decrease every 10 seconds | Fame: 20 | Fame: 10 | _False_|
+|4.| Player can go to work and increase money after 10 seconds| go to work button is clicked | Money: 50 | _False_|
+|5.| Player can post selfies and randomly increase/decrease fame after 5 seconds | post selfies button is clicked | Fame: 20 | _False_|
+|6.| Player can ask for free stuff and randomly increase/decrease fame after 5 seconds | ask for free stuff button is clicked | Fame: 30 | _False_|
+|7.| Player can "live lavishly" and decrease money but increase fame after 8 seconds | live lavishly button is clicked | Money: 10, Fame: 30 | _False_|
+|8.| Player can advertise products to increase money after they reach spec. level of fame but decrease fame slightly after 10 seconds | advertise products button is clicked | Money: 50, Fame: 30 | _False_|
+|9.| Player can maintain their "Insta Image" to lessen fame attrition and increase money attrition after 15 seconds | maintain Insta image button is clicked | FameAttrition: 10, MoneyAttrition: 15 | _False_|
+|10.| Player is prevented from selecting multiple buttons | multiple buttons are selected | alert("Only one action at a time!")| _False_|
+
+
 ## Known Bugs
 
 _No known bugs_
