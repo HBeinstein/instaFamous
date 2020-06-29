@@ -71,7 +71,15 @@ describe('Player', ()=> {
     expect(player.fame).toEqual(10);
   });
 
+  test('should lessen fame attrition and increase money attrition for 30 seconds', ()=> {
+    player.instaImage();
+    expect(player.moneyAttrition).toEqual(5);
+    expect(player.fameAttrition).toEqual(30);
 
+    jest.advanceTimersByTime(30001);
+    expect(player.moneyAttrition).toEqual(10);
+    expect(money.fameAttrition).toEqual(20);
+  });
 });
 
 
