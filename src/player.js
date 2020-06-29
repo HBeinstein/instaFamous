@@ -48,6 +48,9 @@ export class Player {
   }
 
   advertiseProducts() {
-    
+    setTimeout(()=> {
+      this.money += 10;
+      this.fame -= 5;
+    }, 10000)
   }
 }
