@@ -21,7 +21,7 @@ export class Player {
 
   fameAttrition() {
     setInterval(() => {
-      this.decreaseFame(this.fameAttritionVal);
+      this.adjustFame(0, this.fameAttritionVal);
     }, 10000)
   }
 
@@ -33,11 +33,18 @@ export class Player {
     }
   }
 
-  decreaseFame(num) {
-    this.fame -= num;
-
-    if (this.fame < 0)
-      this.fame = 0;
+  adjustFame(posOrNeg, num) {
+    if( posOrNeg === 1) {
+      this.fame += num;
+      if (this.fame >= 100) {
+        this.hasWon === true;
+      }
+    } else {
+      this.fame -= num;
+      if (this.fame < 0) {
+        this.fame = 0;
+      }
+    }
   }
 
   work() {
@@ -51,7 +58,7 @@ export class Player {
   takeSelfies() {
     this.isBusy = true;
     setTimeout(()=> {
-      this.fame+= this.randomInterger(1, 5);
+      this.adjustFame(1, this.randomInterger(1, 5));
       this.isBusy = false;
     }, 5000)
   }
@@ -59,7 +66,7 @@ export class Player {
   getFreeStuff() {
     this.isBusy = true;
     setTimeout(()=> {
-      this.decreaseFame(this.randomInterger(1, 5));
+      this.adjustFame(0, this.randomInterger(1, 5));
       this.money+= this.randomInterger(1, 5);
       this.isBusy = false;
     }, 5000)
@@ -73,7 +80,7 @@ export class Player {
     this.isBusy = true;
     setTimeout(()=> {
       this.decreaseMoney(50);
-      this.fame += 15;
+      this.adjustFame(1, 15);
       this.isBusy = false;
     }, 8000)
   }
@@ -83,7 +90,7 @@ export class Player {
       this.isBusy = true;
       setTimeout(()=> {
         this.money += 10;
-        this.decreaseFame(5);
+        this.adjustFame(0, 5);
         this.isBusy = false;
       }, 10000)
     }
