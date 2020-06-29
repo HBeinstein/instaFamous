@@ -32,7 +32,7 @@ Open by downloading:
 |4.| Player can go to work and increase money after 10 seconds| go to work button is clicked | Money: 50 | _True_|
 |5.| Player can post selfies and randomly increase fame after 5 seconds | post selfies button is clicked | Fame: 20 | _True_|
 |6.| Player can ask for free stuff and randomly increase/decrease fame after 5 seconds | ask for free stuff button is clicked | Fame: 30 | _True_|
-|7.| Player can "live lavishly" and decrease money but increase fame after 8 seconds | live lavishly button is clicked | Money: 10, Fame: 30 | _False_|
+|7.| Player can "live lavishly" and decrease money but increase fame after 8 seconds | live lavishly button is clicked | Money: 10, Fame: 30 | _True_|
 |8.| Player can advertise products to increase money after they reach spec. level of fame but decrease fame slightly after 10 seconds | advertise products button is clicked | Money: 50, Fame: 30 | _False_|
 |9.| Player can maintain their "Insta Image" to lessen fame attrition and increase money attrition after 15 seconds | maintain Insta image button is clicked | FameAttrition: 10, MoneyAttrition: 15 | _False_|
 |10.| Player is prevented from selecting multiple buttons | multiple buttons are selected | alert("Only one action at a time!")| _False_|

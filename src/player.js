@@ -39,4 +39,11 @@ export class Player {
   randomInterger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
   }
+
+  liveLavishly() {
+    setTimeout(()=> {
+      this.money -= 50;
+      this.fame += 15;
+    }, 8000)
+  }
 }
