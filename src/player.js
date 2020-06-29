@@ -11,6 +11,7 @@ export class Player {
     this.isBusy = false;
     this.instaImageFlag = false;
     this.hasLost = false;
+    this.hasWon = false;
   }
 
   moneyAttrition() {

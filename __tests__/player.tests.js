@@ -111,6 +111,13 @@ describe('Player', ()=> {
     expect(player.fame).toEqual(0);
   });
 
+  test('should win if fame reaches 100', ()=> {
+    player.fame = 99;
+    expect(player.hasWon).toBeFalsy();
+    player.liveLavishly();
+    jest.advanceTimersByTime(8001);
+    expect(player.hasWon).toBeTruthy();
+  });
 });
 
 

@@ -38,10 +38,9 @@ Open by downloading:
 |10.| Player is prevented from selecting multiple buttons | multiple buttons are selected | alert("Only one action at a time!")| _True_|
 |11.| Player looses if money is reduced to or below 0 | Money =< 0 | hasLost = true | _True_|
 |12.| Fame can not decrease below 0 | Fame: 5, reduced by 10 | Fame: 0 | _True_ |
-|13.| Player wins if Fame reaches 100| Fame: 100| hasWon = true| _False_|
+|13.| Player wins if Fame reaches 100| Fame: 100| hasWon = true| _True_|
 
-Add spec for winning/loosing
-Add spec for preventing fame to go below "0"
+Implement isBusy flag in running of relevant methods (if isBusy == false) {// method here}
 
 
 ## Known Bugs
