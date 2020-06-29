@@ -46,4 +46,8 @@ export class Player {
       this.fame += 15;
     }, 8000)
   }
+
+  advertiseProducts() {
+    
+  }
 }
