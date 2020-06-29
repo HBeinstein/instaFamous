@@ -27,8 +27,8 @@ Open by downloading:
 | |Behavior| Input| Output| isComplete|
 |---|----|----|----|----|
 |1.| Program instantiates new player upon start with a "Fame" and "Money" stat | start button is clicked | Fame: 0, Money: 400 | _True_|
-|2.| Money will decrease every 15 seconds | Money: 50 | Money: 30 |  _False_|
-|3.| Fame will decrease every 10 seconds | Fame: 20 | Fame: 10 | _False_|
+|2.| Money will decrease every 15 seconds | Money: 50 | Money: 30 |  _True_|
+|3.| Fame will decrease every 10 seconds | Fame: 20 | Fame: 10 | _True_|
 |4.| Player can go to work and increase money after 10 seconds| go to work button is clicked | Money: 50 | _False_|
 |5.| Player can post selfies and randomly increase/decrease fame after 5 seconds | post selfies button is clicked | Fame: 20 | _False_|
 |6.| Player can ask for free stuff and randomly increase/decrease fame after 5 seconds | ask for free stuff button is clicked | Fame: 30 | _False_|

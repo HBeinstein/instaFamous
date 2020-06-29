@@ -20,14 +20,20 @@ describe('Player', ()=> {
     expect(player.fame).toEqual(50);
   });
 
-  test('should have a money value of 180 after 15 seconds', ()=> {
+  test('should have a money value reduced by the money attrition rate after 15 seconds', ()=> {
     jest.advanceTimersByTime(15001);
-    expect(player.money).toEqual(180);
+    expect(player.money).toEqual(200 - player.moneyAttrition);
   });
 
-  test('should have a fame value of 40 after 10 seconds', ()=> {
+  test('should have a fame value reduced by the fame attrition rate after 10 seconds', ()=> {
     jest.advanceTimersByTime(10001);
-    expect(player.fame).toEqual(40);
+    expect(player.fame).toEqual(50 - player.fameAttrition);
+  });
+
+  test('should increase money after 10 seconds by the Job pay rate after 10 seconds', ()=> {
+    player.work();
+    jest.advanceTimersByTime(100001);
+    expect(player.money).toEqual(200 + player.jobPayRate);
   });
 
 });

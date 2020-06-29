@@ -3,17 +3,21 @@ export class Player {
   constructor () {
     this.money = 200;
     this.fame = 0;
+
+    this.moneyAttrition = 20;
+    this.fameAttrition = 10;
+    this.jobPayRate = 25;
   }
 
   decreaseMoneyVal() {
     setInterval(() => {
-      this.money-= 20;
+      this.money-= this.moneyAttrition;
     }, 15000)
   }
 
   decreaseFameVal() {
     setInterval(() => {
-      this.fame-= 10;
+      this.fame-= this.fameAttrition;
     }, 10000)
   }
 
