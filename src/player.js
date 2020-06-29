@@ -21,4 +21,10 @@ export class Player {
     }, 10000)
   }
 
+  work() {
+    setTimeout(()=> {
+      this.money+= this.jobPayRate;
+    },10000)
+  }
+
 }

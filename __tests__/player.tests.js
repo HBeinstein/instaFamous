@@ -32,7 +32,7 @@ describe('Player', ()=> {
 
   test('should increase money after 10 seconds by the Job pay rate after 10 seconds', ()=> {
     player.work();
-    jest.advanceTimersByTime(100001);
+    jest.advanceTimersByTime(10001);
     expect(player.money).toEqual(200 + player.jobPayRate);
   });
 
