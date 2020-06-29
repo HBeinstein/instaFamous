@@ -8,6 +8,7 @@ describe('Player', ()=> {
     player = new Player();
     player.fame += 50;
     player.decreaseMoneyVal();
+    player.decreaseFameVal();
   });
 
   afterEach(function () {
@@ -26,7 +27,7 @@ describe('Player', ()=> {
 
   test('should have a fame value of 40 after 10 seconds', ()=> {
     jest.advanceTimersByTime(10001);
-    expect(player.money).toEqual(40);
+    expect(player.fame).toEqual(40);
   });
 
 });

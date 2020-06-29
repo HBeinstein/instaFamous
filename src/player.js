@@ -12,9 +12,9 @@ export class Player {
   }
 
   decreaseFameVal() {
-    // setInterval(() => {
-    //   this.fame-= 10;
-    // }, 10000)
+    setInterval(() => {
+      this.fame-= 10;
+    }, 10000)
   }
 
 }
