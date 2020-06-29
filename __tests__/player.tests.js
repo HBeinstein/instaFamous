@@ -7,8 +7,8 @@ describe('Player', ()=> {
   beforeEach(function() {
     player = new Player();
     player.fame = 50;
-    player.decreaseMoneyVal();
-    player.decreaseFameVal();
+    player.moneyAttrition();
+    player.fameAttrition();
   });
 
   afterEach(function () {
@@ -22,12 +22,12 @@ describe('Player', ()=> {
 
   test('should have a money value reduced by the money attrition rate after 15 seconds', ()=> {
     jest.advanceTimersByTime(15001);
-    expect(player.money).toEqual(200 - player.moneyAttrition);
+    expect(player.money).toEqual(200 - player.moneyAttritionVal);
   });
 
   test('should have a fame value reduced by the fame attrition rate after 10 seconds', ()=> {
     jest.advanceTimersByTime(10001);
-    expect(player.fame).toEqual(50 - player.fameAttrition);
+    expect(player.fame).toEqual(50 - player.fameAttritionVal);
   });
 
   test('should increase money after 10 seconds by the Job pay rate after 10 seconds when working', ()=> {
@@ -73,12 +73,12 @@ describe('Player', ()=> {
 
   test('should lessen fame attrition and increase money attrition for 30 seconds', ()=> {
     player.instaImage();
-    expect(player.moneyAttrition).toEqual(30);
-    expect(player.fameAttrition).toEqual(5);
+    expect(player.moneyAttritionVal).toEqual(30);
+    expect(player.fameAttritionVal).toEqual(5);
 
     jest.advanceTimersByTime(30001);
-    expect(player.moneyAttrition).toEqual(20);
-    expect(player.fameAttrition).toEqual(10);
+    expect(player.moneyAttritionVal).toEqual(20);
+    expect(player.fameAttritionVal).toEqual(10);
   });
 
   test('should not engage multiple user activities simultaneously', () => {
@@ -97,9 +97,9 @@ describe('Player', ()=> {
 
   test('should cause player to loose if money is reduced below 0', () => {
     player.money = 10;
-    this.hasLost = false;
+    player.hasLost = false;
 
-    jest.advanceTimersByTime(10001);
+    jest.advanceTimersByTime(15001);
 
     expect(player.money).toEqual(-10);
     expect(player.hasLost).toBe(true);
@@ -110,6 +110,7 @@ describe('Player', ()=> {
     jest.advanceTimersByTime(10001);
     expect(player.fame).toEqual(0);
   });
+
 });
 
 

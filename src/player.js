@@ -4,24 +4,33 @@ export class Player {
     this.money = 200;
     this.fame = 0;
 
-    this.moneyAttrition = 20;
-    this.fameAttrition = 10;
+    this.moneyAttritionVal = 20;
+    this.fameAttritionVal = 10;
     this.jobPayRate = 25;
 
     this.isBusy = false;
     this.instaImageFlag = false;
+    this.hasLost = false;
   }
 
-  decreaseMoneyVal() {
+  moneyAttrition() {
     setInterval(() => {
-      this.money-= this.moneyAttrition;
+      this.decreaseMoney(this.moneyAttritionVal);
     }, 15000)
   }
 
-  decreaseFameVal() {
+  fameAttrition() {
     setInterval(() => {
-      this.fame-= this.fameAttrition;
+      this.fame-= this.fameAttritionVal;
     }, 10000)
+  }
+
+  decreaseMoney(num) {
+    this.money-= num;
+
+    if (this.money <= 0) {
+      this.hasLost = true;
+    }
   }
 
   work() {
@@ -56,7 +65,7 @@ export class Player {
   liveLavishly() {
     this.isBusy = true;
     setTimeout(()=> {
-      this.money -= 50;
+      this.decreaseMoney(50);
       this.fame += 15;
       this.isBusy = false;
     }, 8000)
@@ -75,13 +84,13 @@ export class Player {
 
   instaImage() {
     if (this.instaImageFlag === false) {
-      this.moneyAttrition += 10;
-      this.fameAttrition -= 5;
+      this.moneyAttritionVal += 10;
+      this.fameAttritionVal -= 5;
       this.instaImageFlag = true;
 
       setTimeout(()=> {
-        this.moneyAttrition -= 10;
-        this.fameAttrition += 5;
+        this.moneyAttritionVal -= 10;
+        this.fameAttritionVal += 5;
         this.instaImageFlag = false;
       }, 30000)
     }
