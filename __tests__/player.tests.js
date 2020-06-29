@@ -67,7 +67,8 @@ describe('Player', ()=> {
   test('should prevent user from advertising products until they reach 50 fame', ()=> {
     player.fame = 20;
     player.advertiseProducts();
-    expect(player.advertiseProducts).toEqual(0);
+    jest.advanceTimersByTime(10001);
+    expect(player.fame).toEqual(10);
   });
 
 
