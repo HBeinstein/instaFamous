@@ -6,6 +6,7 @@ describe('Player', ()=> {
 
   beforeEach(function() {
     player = new Player();
+    player.decreaseMoneyVal();
   });
 
   afterEach(function () {
