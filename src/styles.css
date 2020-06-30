@@ -7,6 +7,7 @@ button {
   grid-template-columns: 1fr;
   grid-template-rows: 8fr 1fr 1fr;
   height: 100vh;
+  width: 100vw;
 }
 
 #landing-page-container {
@@ -21,7 +22,7 @@ button {
 #overall-button-container {
   border: 1px solid blue;
   /* height: 1em; */
-  width: 100vw;
+  /* width: 100vw; */
   grid-row: 2;
 }
 
@@ -35,7 +36,6 @@ button {
 
 #game-content-container {
   grid-row: 1;
-  z-index: -100;
   /* opacity: 0; */
   border: 1px solid red;
 }

@@ -4,13 +4,15 @@ import './styles.css';
 import $ from "jquery";
 import {Player} from './player.js';
 
-function updateStats (player) {
-  $("#fame").value(player.fame.toString());
+
+function setPlayerStats (player) {
+  $("#fame").val(player.fame.toString()); 
   $("#money").text(player.money);
   $("#cost-of-living").text(player.moneyAttritionVal);
 }
 
 $(document).ready(function() {
+
   let player = new Player();
 
   $('#play-button').click(function() {
@@ -20,9 +22,17 @@ $(document).ready(function() {
     player.moneyAttrition();
     player.fameAttrition();
 
-    updateStats(player);
-    setInterval(updateStats(player), 500);
+    setPlayerStats(player);
+    setInterval(() =>{setPlayerStats(player)}, 500);
   });
+
+
 });
 
-// document.getElementById("myProgress").value = "75";
+
+id="selfie"
+id="work"
+id="free-stuff">
+id="live-lavishly"
+id="advertise"n>
+id="insta-image"
