@@ -17,13 +17,13 @@ export class Player {
   moneyAttrition() {
     setInterval(() => {
       this.decreaseMoney(this.moneyAttritionVal);
-    }, 15000)
+    }, 15000);
   }
 
   fameAttrition() {
     setInterval(() => {
       this.adjustFame(0, this.fameAttritionVal);
-    }, 10000)
+    }, 10000);
   }
 
   decreaseMoney(num) {
@@ -49,28 +49,35 @@ export class Player {
   }
 
   work() {
-    this.isBusy = true;
-    setTimeout(()=> {
-      this.money+= this.jobPayRate;
-      this.isBusy = false;
-    },10000)
+    if (this.isBusy === false) {
+      this.isBusy = true;
+      setTimeout(()=> {
+        this.money+= this.jobPayRate;
+        this.isBusy = false;
+      },10000);
+    }
   }
 
-  takeSelfies() {
-    this.isBusy = true;
-    setTimeout(()=> {
-      this.adjustFame(1, this.randomInterger(1, 5));
-      this.isBusy = false;
-    }, 5000)
+  takeSelfies() { 
+    if (this.isBusy === false) {
+      this.isBusy = true;
+      setTimeout(()=> {
+        this.adjustFame(1, this.randomInterger(1, 5));
+        this.isBusy = false;
+      }, 5000);
+    }
   }
+
 
   getFreeStuff() {
-    this.isBusy = true;
-    setTimeout(()=> {
-      this.adjustFame(0, this.randomInterger(1, 5));
-      this.money+= this.randomInterger(1, 5);
-      this.isBusy = false;
-    }, 5000)
+    if (this.isBusy === false) {
+      this.isBusy = true;
+      setTimeout(()=> {
+        this.adjustFame(0, this.randomInterger(1, 5));
+        this.money+= this.randomInterger(1, 5);
+        this.isBusy = false;
+      }, 5000);
+    } 
   }
 
   randomInterger(min, max) {
@@ -78,22 +85,26 @@ export class Player {
   }
 
   liveLavishly() {
-    this.isBusy = true;
-    setTimeout(()=> {
-      this.decreaseMoney(50);
-      this.adjustFame(1, 15);
-      this.isBusy = false;
-    }, 8000)
+    if (this.isBusy === false) {
+      this.isBusy = true;
+      setTimeout(()=> {
+        this.decreaseMoney(50);
+        this.adjustFame(1, 15);
+        this.isBusy = false;
+      }, 8000);
+    } 
   }
 
   advertiseProducts() {
-    if (this.fame >= 50) {
-      this.isBusy = true;
-      setTimeout(()=> {
-        this.money += 10;
-        this.adjustFame(0, 5);
-        this.isBusy = false;
-      }, 10000)
+    if(this.isBusy === false) {
+      if (this.fame >= 50) {
+        this.isBusy = true;
+        setTimeout(()=> {
+          this.money += 10;
+          this.adjustFame(0, 5);
+          this.isBusy = false;
+        }, 10000);
+      }
     }
   }
 
@@ -107,9 +118,7 @@ export class Player {
         this.moneyAttritionVal -= 10;
         this.fameAttritionVal += 5;
         this.instaImageFlag = false;
-      }, 30000)
+      }, 30000);
     }
   }
-
-
 }

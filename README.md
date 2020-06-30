@@ -40,8 +40,6 @@ Open by downloading:
 |12.| Fame can not decrease below 0 | Fame: 5, reduced by 10 | Fame: 0 | _True_ |
 |13.| Player wins if Fame reaches 100| Fame: 100| hasWon = true| _True_|
 
-Implement isBusy flag in running of relevant methods (if isBusy == false) {// method here}
-
 
 ## Known Bugs
 

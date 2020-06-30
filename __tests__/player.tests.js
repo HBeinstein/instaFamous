@@ -91,7 +91,7 @@ describe('Player', ()=> {
     
     expect(player.isBusy).toBeFalsy();
     expect(player.money).toEqual(200 + player.jobPayRate);
-    expect(player.fame).not.toEqual(40);
+    expect(player.fame).toEqual(40);
   });
 
   test('should cause player to loose if money is reduced below 0', () => {

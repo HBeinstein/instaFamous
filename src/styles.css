@@ -1,0 +1,43 @@
+button {
+  width: 10em;
+}
+
+#overall-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 8fr 1fr 1fr;
+  height: 100vh;
+}
+
+#landing-page-container {
+  border: 1px solid red;
+  /* height: 1em; */
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#overall-button-container {
+  border: 1px solid blue;
+  /* height: 1em; */
+  width: 100vw;
+  grid-row: 2;
+}
+
+#bottom-text-container {
+  border: 1px solid green;
+  /* height: 1em; */
+  grid-row: 3;
+  display: flex;
+  justify-content: center;
+}
+
+#game-content-container {
+  grid-row: 1;
+  z-index: -100;
+  /* opacity: 0; */
+  border: 1px solid red;
+}
+
+
