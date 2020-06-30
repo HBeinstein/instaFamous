@@ -16,14 +16,14 @@ export class Player {
 
   moneyAttrition() {
     setInterval(() => {
-      this.decreaseMoney(this.moneyAttritionVal);
-    }, 15000);
+      this.decreaseMoney(this.moneyAttritionVal / 15);
+    }, 1000);
   }
 
   fameAttrition() {
     setInterval(() => {
-      this.adjustFame(0, this.fameAttritionVal);
-    }, 10000);
+      this.adjustFame(0, (this.fameAttritionVal / 10));
+    }, 1000);
   }
 
   decreaseMoney(num) {
