@@ -38,7 +38,7 @@ export class Player {
     if( posOrNeg === 1) {
       this.fame += num;
       if (this.fame >= 100) {
-        this.hasWon === true;
+        this.hasWon = true;
       }
     } else {
       this.fame -= num;

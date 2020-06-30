@@ -55,7 +55,6 @@ describe('Player', ()=> {
     expect(player.fame).toEqual(65);
     expect(player.money).toEqual(150);
   });
-
   
   test('should increase money and slightly decrease fame after 10 seconds for advertising products', ()=> {
     player.advertiseProducts();
@@ -63,7 +62,7 @@ describe('Player', ()=> {
     expect(player.money).toEqual(210);
     expect(player.fame).toEqual(35);
   });
-        
+    
   test('should prevent user from advertising products until they reach 50 fame', ()=> {
     player.fame = 20;
     player.advertiseProducts();
