@@ -14,6 +14,9 @@ function setPlayerStats (player) {
 $(document).ready(function() {
 
   let player = new Player();
+  
+  //const letMeTakeASelfie = new Audio('../assets/selfie.mp3');
+  // letMeTakeASelfie.src = '../assets/selfie.mp3';
 
   $('#play-button').click(function() {
     $('#landing-page-container').hide();
@@ -26,13 +29,36 @@ $(document).ready(function() {
     setInterval(() =>{setPlayerStats(player)}, 500);
   });
 
+  $('#selfie').click(function() {
+    //letMeTakeASelfie.play();
+    player.takeSelfies();
+  });
 
+  $('#work').click(function() {
+    player.work();
+  });
+
+  $('#free-stuff').click(function() {
+    player.getFreeStuff();
+  });
+
+  $('#live-lavishly').click(function() {
+    player.liveLavishly();
+  });
+
+  $('#advertise').click(function() {
+    player.advertiseProducts();
+  });
+
+  $('#insta-image').click(function() {
+    player.instaImage();
+  });
 });
 
 
-id="selfie"
-id="work"
-id="free-stuff">
-id="live-lavishly"
-id="advertise"n>
-id="insta-image"
+// id="selfie"
+// id="work"
+// id="free-stuff">
+// id="live-lavishly"
+// id="advertise"n>
+// id="insta-image"
